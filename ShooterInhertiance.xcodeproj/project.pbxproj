@@ -12,6 +12,8 @@
 		A912838D1C8974FA00F75197 /* StartMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A912838B1C8974FA00F75197 /* StartMenu.cpp */; };
 		A91283901C89773700F75197 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A912838E1C89773700F75197 /* Level.cpp */; };
 		A91283931C89789000F75197 /* GameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283911C89789000F75197 /* GameOver.cpp */; };
+		A91283971C897B7F00F75197 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283951C897B7F00F75197 /* GameObject.cpp */; };
+		A912839A1C897CE300F75197 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283981C897CE300F75197 /* Player.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
@@ -57,6 +59,10 @@
 		A912838F1C89773700F75197 /* Level.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Level.hpp; path = GameStates/Level.hpp; sourceTree = "<group>"; };
 		A91283911C89789000F75197 /* GameOver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOver.cpp; path = GameStates/GameOver.cpp; sourceTree = "<group>"; };
 		A91283921C89789000F75197 /* GameOver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameOver.hpp; path = GameStates/GameOver.hpp; sourceTree = "<group>"; };
+		A91283951C897B7F00F75197 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = GameObjects/GameObject.cpp; sourceTree = "<group>"; };
+		A91283961C897B7F00F75197 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = GameObjects/GameObject.hpp; sourceTree = "<group>"; };
+		A91283981C897CE300F75197 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = GameObjects/Player.cpp; sourceTree = "<group>"; };
+		A91283991C897CE300F75197 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Player.hpp; path = GameObjects/Player.hpp; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* ShooterInhertianceDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShooterInhertianceDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
@@ -103,6 +109,17 @@
 			name = GameStates;
 			sourceTree = "<group>";
 		};
+		A91283941C897B6400F75197 /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				A91283951C897B7F00F75197 /* GameObject.cpp */,
+				A91283961C897B7F00F75197 /* GameObject.hpp */,
+				A91283981C897CE300F75197 /* Player.cpp */,
+				A91283991C897CE300F75197 /* Player.hpp */,
+			);
+			name = GameObjects;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +151,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				A91283941C897B6400F75197 /* GameObjects */,
 				A91283841C896E1700F75197 /* GameStates */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
@@ -238,7 +256,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A91283971C897B7F00F75197 /* GameObject.cpp in Sources */,
 				A91283901C89773700F75197 /* Level.cpp in Sources */,
+				A912839A1C897CE300F75197 /* Player.cpp in Sources */,
 				A91283931C89789000F75197 /* GameOver.cpp in Sources */,
 				A912838D1C8974FA00F75197 /* StartMenu.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,

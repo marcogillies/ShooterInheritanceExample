@@ -10,14 +10,19 @@
 #define Level_hpp
 
 #include <stdio.h>
+#include <vector>
 #include "GameState.hpp"
+
+class GameObject;
 
 class Level : public GameState
 {
-    
+    std::vector<GameObject *> gameObjects;
 public:
     Level (ofApp *_app);
     ~Level();
+    
+    void clear();
     
     virtual void start();
     virtual void draw();

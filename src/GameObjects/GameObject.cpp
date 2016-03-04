@@ -31,3 +31,8 @@ void GameObject::draw()
     ofPopMatrix();
 };
 
+
+void GameObject::keyPressed(int key)
+{
+    
+}

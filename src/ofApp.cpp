@@ -8,7 +8,7 @@ void ofApp::setup(){
     font = std::shared_ptr<ofTrueTypeFont>(new ofTrueTypeFont());
     font->load("verdana.ttf", 48);
     gameStates.push_back(std::unique_ptr<GameState> (new StartMenu(this, font)));
-    gameStates.push_back(std::unique_ptr<GameState> (new Level(this)));
+    gameStates.push_back(std::unique_ptr<GameState> (new Level(this, 20, 10)));
     gameStates.push_back(std::unique_ptr<GameState> (new GameOver(this, font)));
     setGameState(0);
     

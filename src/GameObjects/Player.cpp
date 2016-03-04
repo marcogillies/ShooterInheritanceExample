@@ -12,7 +12,7 @@
 // passes is to the super class (GameObject) constructor
 // It also creates an inventory and adds a weapon to it
 Player::Player(float x, float y)
-:GameObject(x,y)
+:Entity(x,y, 40, 5), currentWeapon(nullptr)
 {
     //inventory = new ArrayList <Weapon>();
     //addWeapon(new Weapon(1, 2, 0.1));
@@ -25,35 +25,34 @@ Player::~Player()
 
 // add a new weapon to the inventory
 // and set it as the current weapon
-//void Player::addWeapon(Weapon w)
-//{
-//    inventory.add(w);
-//    currentWeapon = w;
-//    currentWeapon.owner = this;
-//}
+void Player::addWeapon(Weapon *w)
+{
+    inventory.push_back(w);
+    currentWeapon = w;
+     currentWeapon->setOwner(this);
+}
 
 // Select a new weapon from the inventory.
 // A weapon is selected by a number which is
 // it's index into the inventory
-//void Player::chooseWeapon(int i)
-//{
-//    // we need to check that i is actually
-//    // in the inventory
-//    if(i >= 0 && i < inventory.size())
-//    {
-//        // get weapon i and set it as the current weapon
-//        currentWeapon = inventory.get(i);
-//    }
-//}
+void Player::chooseWeapon(int i)
+{
+    // we need to check that i is actually
+    // in the inventory
+    if(i >= 0 && i < inventory.size())
+    {
+        // get weapon i and set it as the current weapon
+        currentWeapon = inventory[i];
+    }
+}
 
 // fire the weapon
 void Player::fire()
 {
-    std::cout << "bang\n";
-    //if(currentWeapon!= null)
-    //{
-    //    currentWeapon.fire();
-    //}
+    if(currentWeapon != nullptr)
+    {
+        currentWeapon->fire();
+    }
 }
 
 // draw the player
@@ -64,13 +63,17 @@ void Player::subclassDraw()
 {
     // move fowrad
     pos.x += 1;
-    // health bar
-    ofSetColor(0, 255, 0);
-    ofFill();
-    ofDrawRectangle(0, -12, health, 4);
+   
+    Entity::subclassDraw();
+    
+    
     // player
-    //ofSetColor(currentWeapon.colour);
-    ofSetColor(255, 0, 0);
+    ofColor col (255, 0, 0);
+    if(currentWeapon){
+        col =currentWeapon->getColour();
+    }
+    ofSetColor(col);
+    //ofSetColor(255, 0, 0);
     ofFill();
     ofDrawRectangle(0, 0, 20, 20);
 }

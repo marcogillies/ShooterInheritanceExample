@@ -38,7 +38,11 @@ public:
     // subclass to provide specific drawing code
     virtual void subclassDraw()=0;
     
-    virtual void keyPressed(int key)=0;
+    virtual void keyPressed(int key);
+    
+    ofVec2f getPosition(){
+        return pos;
+    }
 };
 
 #endif /* GameObject_hpp */

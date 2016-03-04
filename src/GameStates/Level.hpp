@@ -17,9 +17,15 @@ class GameObject;
 
 class Level : public GameState
 {
+    int numEnemies;
+    int numPickups;
+    static Level * currentLevel;
     std::vector<GameObject *> gameObjects;
 public:
-    Level (ofApp *_app);
+    static void setCurrentLevel(Level *l);
+    static Level *getCurrentLevel();
+    
+    Level (ofApp *_app, int enemies, int pickups);
     ~Level();
     
     void clear();
@@ -27,6 +33,10 @@ public:
     virtual void start();
     virtual void draw();
     virtual void keyPressed(int key);
+    
+    void addGameObject(GameObject *go){
+        gameObjects.push_back(go);
+    }
 };
 
 #endif /* Level_hpp */

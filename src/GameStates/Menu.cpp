@@ -7,6 +7,7 @@
 //
 
 #include "Menu.hpp"
+#include "Level.hpp"
 
 
 Menu::Menu(ofApp *_app, std::shared_ptr<ofTrueTypeFont>_font, std::string _text)
@@ -22,6 +23,7 @@ Menu::~Menu()
 
 void Menu::start()
 {
+    Level::setCurrentLevel(nullptr);
     ofBackground(100, 0, 0);
 }
 

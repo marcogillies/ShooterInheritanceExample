@@ -17,6 +17,16 @@ class ofApp;
 
 class GameState
 {
+private:
+    // do not copy
+    GameState(const GameState &gs){
+        // do not copy;
+    }
+    // do not copy
+    GameState &operator=(const GameState &gs){
+        return *this;
+    }
+    
 protected:
     static std::vector<std::unique_ptr<GameState> > gameStates;
     static int currentGameState;

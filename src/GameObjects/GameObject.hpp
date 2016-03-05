@@ -14,6 +14,16 @@
 
 class GameObject
 {
+private:
+    // do not copy
+    GameObject(const GameObject &gs){
+        // do not copy;
+    }
+    // do not copy
+    GameObject &operator=(const GameObject &gs){
+        return *this;
+    }
+    
 protected:
     // if this becomes true, the object should
     // be removed

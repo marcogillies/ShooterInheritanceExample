@@ -41,7 +41,7 @@ public:
     static void nextGameState()
     {
         if(currentGameState < getNumGameStates()-1){
-            currentGameState ++;
+            setGameState(currentGameState+1);
         }
     }
     static int getNumGameStates(){

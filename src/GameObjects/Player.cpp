@@ -77,6 +77,10 @@ void Player::subclassDraw()
     //ofSetColor(255, 0, 0);
     ofFill();
     ofDrawRectangle(0, 0, getHeight(), getWidth());
+    
+    if(getPosition().x > ofGetWidth()){
+        Level::getCurrentLevel()->win();
+    }
 }
 
 void Player::keyPressed(int key)

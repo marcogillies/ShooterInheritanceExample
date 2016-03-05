@@ -20,6 +20,8 @@ class Enemy : public  Entity
 {
 protected:
     float damage;
+    
+    virtual void collisionResponse(GameObject *other);
 public:
     // The constructor takes the position of the player and
     // passes is to the super class (GameObject) constructor
@@ -33,6 +35,7 @@ public:
     // draw a square for the player and a
     // health bar
     virtual void subclassDraw();
+    
 };
 
 

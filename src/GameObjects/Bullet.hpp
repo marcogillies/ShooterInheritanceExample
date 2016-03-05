@@ -21,6 +21,8 @@ class Bullet : public GameObject
     float damage;
     float speed;
     
+    virtual void collisionResponse(GameObject *other);
+    
     
 public:
     // The constructor takes the x and y position as

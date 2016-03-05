@@ -12,12 +12,14 @@
 		A912838D1C8974FA00F75197 /* StartMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A912838B1C8974FA00F75197 /* StartMenu.cpp */; };
 		A91283901C89773700F75197 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A912838E1C89773700F75197 /* Level.cpp */; };
 		A91283931C89789000F75197 /* GameOver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283911C89789000F75197 /* GameOver.cpp */; };
-		A91283971C897B7F00F75197 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283951C897B7F00F75197 /* GameObject.cpp */; };
-		A912839A1C897CE300F75197 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283981C897CE300F75197 /* Player.cpp */; };
 		A912839D1C8983D000F75197 /* Weapon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A912839B1C8983D000F75197 /* Weapon.cpp */; };
-		A91283A01C898B1600F75197 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A912839E1C898B1600F75197 /* Bullet.cpp */; };
-		A91283A31C89CEB700F75197 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283A11C89CEB700F75197 /* Entity.cpp */; };
-		A91283A61C89D00C00F75197 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283A41C89D00C00F75197 /* Enemy.cpp */; };
+		A91283B51C8AF1A300F75197 /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283AB1C8AF1A300F75197 /* Bullet.cpp */; };
+		A91283B61C8AF1A300F75197 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283AD1C8AF1A300F75197 /* Enemy.cpp */; };
+		A91283B71C8AF1A300F75197 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283AF1C8AF1A300F75197 /* Entity.cpp */; };
+		A91283B81C8AF1A300F75197 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283B11C8AF1A300F75197 /* GameObject.cpp */; };
+		A91283B91C8AF1A300F75197 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283B31C8AF1A300F75197 /* Player.cpp */; };
+		A91283BC1C8AF30A00F75197 /* PickUp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283BA1C8AF30A00F75197 /* PickUp.cpp */; };
+		A91283BF1C8AF41400F75197 /* HealthPickup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283BD1C8AF41400F75197 /* HealthPickup.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
@@ -63,18 +65,22 @@
 		A912838F1C89773700F75197 /* Level.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Level.hpp; path = GameStates/Level.hpp; sourceTree = "<group>"; };
 		A91283911C89789000F75197 /* GameOver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameOver.cpp; path = GameStates/GameOver.cpp; sourceTree = "<group>"; };
 		A91283921C89789000F75197 /* GameOver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameOver.hpp; path = GameStates/GameOver.hpp; sourceTree = "<group>"; };
-		A91283951C897B7F00F75197 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = GameObjects/GameObject.cpp; sourceTree = "<group>"; };
-		A91283961C897B7F00F75197 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = GameObjects/GameObject.hpp; sourceTree = "<group>"; };
-		A91283981C897CE300F75197 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = GameObjects/Player.cpp; sourceTree = "<group>"; };
-		A91283991C897CE300F75197 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Player.hpp; path = GameObjects/Player.hpp; sourceTree = "<group>"; };
 		A912839B1C8983D000F75197 /* Weapon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Weapon.cpp; sourceTree = "<group>"; };
 		A912839C1C8983D000F75197 /* Weapon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Weapon.hpp; sourceTree = "<group>"; };
-		A912839E1C898B1600F75197 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bullet.cpp; path = GameObjects/Bullet.cpp; sourceTree = "<group>"; };
-		A912839F1C898B1600F75197 /* Bullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Bullet.hpp; path = GameObjects/Bullet.hpp; sourceTree = "<group>"; };
-		A91283A11C89CEB700F75197 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = GameObjects/Entity.cpp; sourceTree = "<group>"; };
-		A91283A21C89CEB700F75197 /* Entity.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Entity.hpp; path = GameObjects/Entity.hpp; sourceTree = "<group>"; };
-		A91283A41C89D00C00F75197 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Enemy.cpp; path = GameObjects/Enemy.cpp; sourceTree = "<group>"; };
-		A91283A51C89D00C00F75197 /* Enemy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Enemy.hpp; path = GameObjects/Enemy.hpp; sourceTree = "<group>"; };
+		A91283AB1C8AF1A300F75197 /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
+		A91283AC1C8AF1A300F75197 /* Bullet.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bullet.hpp; sourceTree = "<group>"; };
+		A91283AD1C8AF1A300F75197 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		A91283AE1C8AF1A300F75197 /* Enemy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Enemy.hpp; sourceTree = "<group>"; };
+		A91283AF1C8AF1A300F75197 /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		A91283B01C8AF1A300F75197 /* Entity.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Entity.hpp; sourceTree = "<group>"; };
+		A91283B11C8AF1A300F75197 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		A91283B21C8AF1A300F75197 /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
+		A91283B31C8AF1A300F75197 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		A91283B41C8AF1A300F75197 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		A91283BA1C8AF30A00F75197 /* PickUp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PickUp.cpp; sourceTree = "<group>"; };
+		A91283BB1C8AF30A00F75197 /* PickUp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PickUp.hpp; sourceTree = "<group>"; };
+		A91283BD1C8AF41400F75197 /* HealthPickup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthPickup.cpp; sourceTree = "<group>"; };
+		A91283BE1C8AF41400F75197 /* HealthPickup.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HealthPickup.hpp; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* ShooterInhertianceDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShooterInhertianceDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
@@ -121,21 +127,25 @@
 			name = GameStates;
 			sourceTree = "<group>";
 		};
-		A91283941C897B6400F75197 /* GameObjects */ = {
+		A91283AA1C8AF1A300F75197 /* GameObjects */ = {
 			isa = PBXGroup;
 			children = (
-				A91283951C897B7F00F75197 /* GameObject.cpp */,
-				A91283961C897B7F00F75197 /* GameObject.hpp */,
-				A91283981C897CE300F75197 /* Player.cpp */,
-				A91283991C897CE300F75197 /* Player.hpp */,
-				A912839E1C898B1600F75197 /* Bullet.cpp */,
-				A912839F1C898B1600F75197 /* Bullet.hpp */,
-				A91283A11C89CEB700F75197 /* Entity.cpp */,
-				A91283A21C89CEB700F75197 /* Entity.hpp */,
-				A91283A41C89D00C00F75197 /* Enemy.cpp */,
-				A91283A51C89D00C00F75197 /* Enemy.hpp */,
+				A91283AB1C8AF1A300F75197 /* Bullet.cpp */,
+				A91283AC1C8AF1A300F75197 /* Bullet.hpp */,
+				A91283AD1C8AF1A300F75197 /* Enemy.cpp */,
+				A91283AE1C8AF1A300F75197 /* Enemy.hpp */,
+				A91283AF1C8AF1A300F75197 /* Entity.cpp */,
+				A91283B01C8AF1A300F75197 /* Entity.hpp */,
+				A91283B11C8AF1A300F75197 /* GameObject.cpp */,
+				A91283B21C8AF1A300F75197 /* GameObject.hpp */,
+				A91283B31C8AF1A300F75197 /* Player.cpp */,
+				A91283B41C8AF1A300F75197 /* Player.hpp */,
+				A91283BA1C8AF30A00F75197 /* PickUp.cpp */,
+				A91283BB1C8AF30A00F75197 /* PickUp.hpp */,
+				A91283BD1C8AF41400F75197 /* HealthPickup.cpp */,
+				A91283BE1C8AF41400F75197 /* HealthPickup.hpp */,
 			);
-			name = GameObjects;
+			path = GameObjects;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
@@ -169,7 +179,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				A91283941C897B6400F75197 /* GameObjects */,
+				A91283AA1C8AF1A300F75197 /* GameObjects */,
 				A91283841C896E1700F75197 /* GameStates */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
@@ -276,16 +286,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A91283971C897B7F00F75197 /* GameObject.cpp in Sources */,
 				A91283901C89773700F75197 /* Level.cpp in Sources */,
-				A912839A1C897CE300F75197 /* Player.cpp in Sources */,
+				A91283BF1C8AF41400F75197 /* HealthPickup.cpp in Sources */,
+				A91283B51C8AF1A300F75197 /* Bullet.cpp in Sources */,
+				A91283B61C8AF1A300F75197 /* Enemy.cpp in Sources */,
+				A91283B71C8AF1A300F75197 /* Entity.cpp in Sources */,
 				A91283931C89789000F75197 /* GameOver.cpp in Sources */,
-				A91283A31C89CEB700F75197 /* Entity.cpp in Sources */,
+				A91283BC1C8AF30A00F75197 /* PickUp.cpp in Sources */,
 				A912838D1C8974FA00F75197 /* StartMenu.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
-				A91283A61C89D00C00F75197 /* Enemy.cpp in Sources */,
 				A91283871C896E3F00F75197 /* GameState.cpp in Sources */,
-				A91283A01C898B1600F75197 /* Bullet.cpp in Sources */,
+				A91283B91C8AF1A300F75197 /* Player.cpp in Sources */,
+				A91283B81C8AF1A300F75197 /* GameObject.cpp in Sources */,
 				A912839D1C8983D000F75197 /* Weapon.cpp in Sources */,
 				A912838A1C896EE500F75197 /* Menu.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,

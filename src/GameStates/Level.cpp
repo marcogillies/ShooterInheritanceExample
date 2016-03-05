@@ -52,11 +52,11 @@ void Level::start()
     gameObjects.push_back(player);
     
     for (int i = 0; i < numEnemies; i++){
-        Enemy *enemy = new Enemy(ofRandom(50, ofGetWidth()), // x
+        Enemy *enemy = new Enemy(ofRandom(50, 2*ofGetWidth()), // x
                                  ofRandom(0, ofGetHeight()), //y
                                  ofRandom(5, 20), //health
                                  ofRandom(0, 1.0), //speed
-                                 ofRandom(1,5));//damage
+                                 ofRandom(1,20));//damage
         gameObjects.push_back(enemy);
     }
 }
@@ -66,6 +66,16 @@ void Level::draw()
     for (GameObject *go : gameObjects){
         go->draw();
     }
+    for(int i = 0; i < gameObjects.size()-1; i++){
+        for (int j = i+1; j < gameObjects.size(); j++){
+            gameObjects[i]->collide((gameObjects[j]));
+        }
+    }
+    auto it = std::remove_if(gameObjects.begin(), gameObjects.end(),
+                             [](GameObject *go){
+                                 return !go->isAlive();
+                             });
+    gameObjects.erase(it, gameObjects.end());
 }
 
 void Level::keyPressed(int key)

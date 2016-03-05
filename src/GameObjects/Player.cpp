@@ -12,7 +12,7 @@
 // passes is to the super class (GameObject) constructor
 // It also creates an inventory and adds a weapon to it
 Player::Player(float x, float y)
-:Entity(x,y, 40, 5), currentWeapon(nullptr)
+:Entity(x,y, 20, 20, 40, 5), currentWeapon(nullptr)
 {
     //inventory = new ArrayList <Weapon>();
     //addWeapon(new Weapon(1, 2, 0.1));
@@ -62,7 +62,7 @@ void Player::fire()
 void Player::subclassDraw()
 {
     // move fowrad
-    pos.x += 1;
+    move(1, 0);;
    
     Entity::subclassDraw();
     
@@ -75,7 +75,7 @@ void Player::subclassDraw()
     ofSetColor(col);
     //ofSetColor(255, 0, 0);
     ofFill();
-    ofDrawRectangle(0, 0, 20, 20);
+    ofDrawRectangle(0, 0, getHeight(), getWidth());
 }
 
 void Player::keyPressed(int key)
@@ -95,9 +95,9 @@ void Player::keyPressed(int key)
 // (called from keyPressed)
 void Player::up()
 {
-    pos.y -= speed;
+    move(0, -speed);
 }
 void Player::down()
 {
-    pos.y += speed;
+    move(0, speed);
 }

@@ -7,6 +7,7 @@
 //
 
 #include "Bullet.hpp"
+#include "Enemy.hpp"
 
 // The constructor takes the x and y position as
 // well as values for the speed and damage
@@ -14,7 +15,7 @@
 // constructor while d and s are used to set the damage
 // and speed variables
 Bullet::Bullet(float x, float y, float d, float s)
-:GameObject(x,y), damage(d), speed(s)
+:GameObject(x,y, 3, 3), damage(d), speed(s)
 {
     
 }
@@ -25,8 +26,19 @@ Bullet::Bullet(float x, float y, float d, float s)
 // the damage
 void Bullet::subclassDraw()
 {
-    pos.x += speed;
+    move(speed, 0);
     ofSetColor(255);
     ofFill();
-    ofDrawCircle(0, 0, 2*damage);
+    ofDrawCircle(0, 0, getWidth());
+}
+
+
+void Bullet::collisionResponse(GameObject *other)
+{
+    Enemy *enemy = dynamic_cast<Enemy *>(other);
+    if(enemy){
+        enemy->takeDamage(damage);
+        die();
+    }
+    
 }

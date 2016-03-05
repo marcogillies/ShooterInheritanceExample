@@ -27,7 +27,7 @@ public:
     // The constructor takes the position of the player and
     // passes is to the super class (GameObject) constructor
     // It also creates an inventory and adds a weapon to it
-    Entity(float x, float y, float h, float s);
+    Entity(float x, float y, float w, float h, float _health, float _speed);
     
     ~Entity();
     
@@ -36,6 +36,11 @@ public:
     // draw a square for the player and a
     // health bar
     virtual void subclassDraw();
+    
+    
+    void takeDamage(float d);
+    
+    void addHealth(float h);
 };
 
 #endif /* Entity_hpp */

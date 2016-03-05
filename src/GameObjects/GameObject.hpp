@@ -15,15 +15,17 @@
 class GameObject
 {
 protected:
-    // this is the position of the object
-    ofVec2f pos;
     // if this becomes true, the object should
     // be removed
     bool dead = false;
     
+    ofRectangle boundingBox;
+    
+    virtual void collisionResponse(GameObject *other);
+    
 public:
     // generic constructor that sets the position
-    GameObject(float x, float y);
+    GameObject(float x, float y, float w, float h);
     
     virtual ~GameObject();
     
@@ -40,8 +42,30 @@ public:
     
     virtual void keyPressed(int key);
     
-    ofVec2f getPosition(){
-        return pos;
+    ofPoint getPosition(){
+        return boundingBox.getCenter();
+    }
+    
+    void move(float x, float y){
+        boundingBox.setPosition(boundingBox.getX() + x, boundingBox.getY() + y);
+    }
+    
+    float getHeight(){
+        return boundingBox.getHeight();
+    }
+    
+    float getWidth(){
+        return boundingBox.getWidth();
+    }
+    
+    void collide (GameObject *other);
+    
+    void die(){
+        dead = true;
+    }
+    
+    bool isAlive(){
+        return !dead;
     }
 };
 

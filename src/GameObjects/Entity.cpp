@@ -11,8 +11,8 @@
 // The constructor takes the position of the player and
 // passes is to the super class (GameObject) constructor
 // It also creates an inventory and adds a weapon to it
-Entity::Entity(float x, float y, float h, float s)
-:GameObject(x,y),health(h), speed(s)
+Entity::Entity(float x, float y, float w, float h, float _health, float _speed)
+:GameObject(x,y, w, h),health(_health), speed(_speed)
 {
     //inventory = new ArrayList <Weapon>();
     //addWeapon(new Weapon(1, 2, 0.1));
@@ -35,4 +35,19 @@ void Entity::subclassDraw()
     ofFill();
     ofDrawRectangle(0, -12, health, 4);
     // player
+}
+
+
+void Entity::takeDamage(float d)
+{
+    health -= d;
+    if (health <= 0){
+        die();
+    }
+}
+
+
+void Entity::addHealth(float h)
+{
+    health += h;
 }

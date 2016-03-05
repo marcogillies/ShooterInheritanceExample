@@ -9,8 +9,8 @@
 #include "GameObject.hpp"
 
 // generic constructor that sets the position
-GameObject::GameObject(float x, float y)
-: pos(x,y)
+GameObject::GameObject(float x, float y, float w, float h)
+: boundingBox(x,y,w,h)
 {
 }
 
@@ -26,7 +26,7 @@ GameObject::~GameObject()
 void GameObject::draw()
 {
     ofPushMatrix();
-    ofTranslate(pos.x, pos.y);
+    ofTranslate(boundingBox.getLeft(), boundingBox.getTop());
     subclassDraw();
     ofPopMatrix();
 };
@@ -36,3 +36,18 @@ void GameObject::keyPressed(int key)
 {
     
 }
+
+
+void GameObject::collide (GameObject *other)
+{
+    if(this->boundingBox.intersects(other->boundingBox)){
+        this->collisionResponse(other);
+        other->collisionResponse(this);
+    }
+}
+
+ void GameObject::collisionResponse(GameObject *other)
+{
+    
+}
+

@@ -23,6 +23,9 @@ public:
     ~HealthPickup();
     
     virtual void apply(Player *player);
+    
+    
+    virtual void subclassDraw();
 };
 
 #endif /* HealthPickup_hpp */

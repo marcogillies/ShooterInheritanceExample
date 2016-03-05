@@ -10,6 +10,9 @@
 #include "ofMain.h"
 #include "Player.hpp"
 #include "Enemy.hpp"
+#include "HealthPickup.hpp"
+#include "WeaponPickup.hpp"
+#include "Weapon.hpp"
 
 
 Level * Level::currentLevel = nullptr;
@@ -58,6 +61,24 @@ void Level::start()
                                  ofRandom(0, 1.0), //speed
                                  ofRandom(1,20));//damage
         gameObjects.push_back(enemy);
+    }
+    
+    for (int i = 0; i < numPickups; i++){
+        if(ofRandom(1.0) > 0.5f){
+            HealthPickup *pickup= new HealthPickup(ofRandom(50, ofGetWidth()), // x
+                                            ofRandom(0, ofGetHeight()), //y
+                                            ofRandom(5, 20)); //health
+            gameObjects.push_back(pickup);
+        } else {
+            Weapon * weapon = new Weapon (ofRandom(1, 10), // damage
+                                          ofRandom(0, 3.0f), //speed
+                                          ofRandom(0.0f, 1.0f)); // reload time
+            WeaponPickup *pickup= new WeaponPickup(ofRandom(50, ofGetWidth()), // x
+                                                   ofRandom(0, ofGetHeight()), //y
+                                                   weapon);
+            gameObjects.push_back(pickup);
+
+        }
     }
 }
 

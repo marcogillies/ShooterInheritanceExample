@@ -15,7 +15,7 @@
 // constructor while d and s are used to set the damage
 // and speed variables
 Pickup::Pickup(float x, float y)
-:GameObject(x,y, 20, 20)
+:GameObject(x,y, 10, 10)
 {
 }
 

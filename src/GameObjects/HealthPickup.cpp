@@ -25,3 +25,10 @@ void HealthPickup::apply(Player *player)
     if(player)
         player->addHealth(health);
 }
+
+void HealthPickup::subclassDraw()
+{
+    ofSetColor(200, 255, 200);
+    ofFill();
+    ofDrawCircle(0, 0, getWidth());
+}

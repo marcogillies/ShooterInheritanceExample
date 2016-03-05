@@ -46,8 +46,12 @@ void GameObject::collide (GameObject *other)
     }
 }
 
- void GameObject::collisionResponse(GameObject *other)
+void GameObject::collisionResponse(GameObject *other)
 {
     
+}
+
+void GameObject::die(){
+    dead = true;
 }
 

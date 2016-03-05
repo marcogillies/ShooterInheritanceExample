@@ -15,14 +15,15 @@
 #include "Weapon.hpp"
 
 
-Level * Level::currentLevel = nullptr;
+//Level * Level::currentLevel = nullptr;
 
-void Level::setCurrentLevel(Level *l)
-{
-    currentLevel = l;
-}
+//void Level::setCurrentLevel(Level *l)
+//{
+//    currentLevel = l;
+//}
 Level *Level::getCurrentLevel()
 {
+    Level * currentLevel = dynamic_cast<Level *>(GameState::getCurrentGameState());
     return currentLevel;
 }
 
@@ -45,7 +46,7 @@ void Level::clear(){
 
 void Level::start()
 {
-    setCurrentLevel(this);
+    //setCurrentLevel(this);
     
     clear();
     
@@ -105,3 +106,17 @@ void Level::keyPressed(int key)
         gameObjects[i]->keyPressed(key);
     }
 }
+
+void Level::gameOver()
+{
+    GameState::setGameState(GameState::getNumGameStates()-1);
+}
+
+void Level::win()
+{
+    GameState::nextGameState();
+    if(getCurrentLevel() == nullptr){
+        GameState::setGameState(0);
+    }
+}
+

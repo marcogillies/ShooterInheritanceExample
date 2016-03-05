@@ -19,6 +19,7 @@ protected:
     // be removed
     bool dead = false;
     
+    //ofVec2f pos;
     ofRectangle boundingBox;
     
     virtual void collisionResponse(GameObject *other);
@@ -60,9 +61,7 @@ public:
     
     void collide (GameObject *other);
     
-    void die(){
-        dead = true;
-    }
+    virtual void die();
     
     bool isAlive(){
         return !dead;

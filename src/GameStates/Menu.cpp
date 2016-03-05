@@ -23,7 +23,6 @@ Menu::~Menu()
 
 void Menu::start()
 {
-    Level::setCurrentLevel(nullptr);
     ofBackground(100, 0, 0);
 }
 

@@ -8,6 +8,12 @@
 
 #include "GameState.hpp"
 
+
+
+std::vector<std::unique_ptr<GameState> > GameState::gameStates;
+
+int GameState::currentGameState = 0;
+
 GameState::GameState(ofApp *_app) : app(_app)
 {
     

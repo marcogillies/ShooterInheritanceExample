@@ -22,6 +22,6 @@ StartMenu::~StartMenu()
 void StartMenu::keyPressed(int key)
 {
     if(key == ' '){
-        app->setGameState(1);
+        GameState::setGameState(1);
     }
 }

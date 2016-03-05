@@ -7,6 +7,7 @@
 //
 
 #include "Player.hpp"
+#include "Level.hpp"
 
 // The constructor takes the position of the player and
 // passes is to the super class (GameObject) constructor
@@ -101,3 +102,14 @@ void Player::down()
 {
     move(0, speed);
 }
+
+void Player::die(){
+    Level * level = Level::getCurrentLevel();
+    if(level){
+        level->gameOver();
+    }
+}
+
+
+    
+

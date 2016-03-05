@@ -55,6 +55,8 @@ public:
     void up();
     void down();
     
+    virtual void die();
+    
 };
 
 #endif /* Player_hpp */

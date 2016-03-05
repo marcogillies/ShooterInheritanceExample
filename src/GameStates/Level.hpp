@@ -19,10 +19,10 @@ class Level : public GameState
 {
     int numEnemies;
     int numPickups;
-    static Level * currentLevel;
+    //static Level * currentLevel;
     std::vector<GameObject *> gameObjects;
 public:
-    static void setCurrentLevel(Level *l);
+    //static void setCurrentLevel(Level *l);
     static Level *getCurrentLevel();
     
     Level (ofApp *_app, int enemies, int pickups);
@@ -37,6 +37,9 @@ public:
     void addGameObject(GameObject *go){
         gameObjects.push_back(go);
     }
+    
+    void gameOver();
+    void win();
 };
 
 #endif /* Level_hpp */

@@ -10,14 +10,44 @@
 #define GameState_hpp
 
 #include <stdio.h>
+#include <vector>
+#include <memory>
 
 class ofApp;
 
 class GameState
 {
 protected:
+    static std::vector<std::unique_ptr<GameState> > gameStates;
+    static int currentGameState;
+    
     ofApp *app;
 public:
+    static void addGameState(GameState *gs)
+    {
+        gameStates.push_back(std::unique_ptr<GameState> (gs));
+    }
+    static GameState *getCurrentGameState()
+    {
+        return gameStates[currentGameState].get();
+    }
+    static void setGameState(int i)
+    {
+        if(i >= 0 && i < gameStates.size()){
+            currentGameState = i;
+            gameStates[currentGameState]->start();
+        }
+    }
+    static void nextGameState()
+    {
+        if(currentGameState < getNumGameStates()-1){
+            currentGameState ++;
+        }
+    }
+    static int getNumGameStates(){
+        return gameStates.size();
+    }
+    
     GameState(ofApp *_app);
     virtual ~GameState();
     

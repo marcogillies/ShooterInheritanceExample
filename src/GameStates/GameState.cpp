@@ -12,7 +12,7 @@
 
 std::vector<std::unique_ptr<GameState> > GameState::gameStates;
 
-int GameState::currentGameState = 0;
+int GameState::currentGameState = -1;
 
 GameState::GameState(ofApp *_app) : app(_app)
 {

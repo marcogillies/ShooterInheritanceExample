@@ -26,6 +26,12 @@ void Menu::start()
     ofBackground(100, 0, 0);
 }
 
+
+void Menu::end()
+{
+    
+}
+
 void Menu::draw()
 {
     font->drawString(text, 200, ofGetHeight()/2);

@@ -34,6 +34,11 @@ public:
     static void setGameState(int i)
     {
         if(i >= 0 && i < gameStates.size()){
+            
+            if(currentGameState > 0 || currentGameState < gameStates.size()){
+                gameStates[currentGameState]->end();
+            }
+            
             currentGameState = i;
             gameStates[currentGameState]->start();
         }
@@ -52,6 +57,8 @@ public:
     virtual ~GameState();
     
     virtual void start()=0;
+    virtual void end()=0;
+    
     virtual void draw()=0;
     virtual void keyPressed(int key)=0;
 };

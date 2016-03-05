@@ -22,6 +22,7 @@ public:
     virtual ~Menu();
     
     virtual void start();
+    virtual void end();
     virtual void draw();
 };
 

@@ -21,7 +21,10 @@ Player::Player(float x, float y)
 
 Player::~Player()
 {
-    
+    for (auto weapon : inventory){
+        delete weapon;
+    }
+    inventory.clear();
 }
 
 // add a new weapon to the inventory

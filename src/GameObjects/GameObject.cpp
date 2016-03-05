@@ -25,10 +25,12 @@ GameObject::~GameObject()
 // specific drawing code for the subclass
 void GameObject::draw()
 {
+    ofPushStyle();
     ofPushMatrix();
     ofTranslate(boundingBox.getLeft(), boundingBox.getTop());
     subclassDraw();
     ofPopMatrix();
+    ofPopStyle();
 };
 
 

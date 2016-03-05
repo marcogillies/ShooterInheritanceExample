@@ -11,7 +11,7 @@ void ofApp::setup(){
     GameState::addGameState(new Level(this, 10, 5));
     GameState::addGameState(new Level(this, 20, 10));
     GameState::addGameState(new GameOver(this, font));
-    //setGameState(0);
+    GameState::setGameState(0);
     
 }
 

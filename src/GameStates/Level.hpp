@@ -17,8 +17,18 @@ class GameObject;
 
 class Level : public GameState
 {
+    enum State {
+        not_started,
+        playing,
+        complete,
+        failed
+    };
+    
+    State state;
+    
     int numEnemies;
     int numPickups;
+    
     //static Level * currentLevel;
     std::vector<GameObject *> gameObjects;
 public:
@@ -28,9 +38,9 @@ public:
     Level (ofApp *_app, int enemies, int pickups);
     ~Level();
     
-    void clear();
     
     virtual void start();
+    virtual void end();
     virtual void draw();
     virtual void keyPressed(int key);
     
@@ -38,8 +48,12 @@ public:
         gameObjects.push_back(go);
     }
     
-    void gameOver();
-    void win();
+    void gameOver(){
+        state = failed;
+    };
+    void win(){
+        state = complete;
+    }
 };
 
 #endif /* Level_hpp */

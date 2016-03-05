@@ -28,16 +28,16 @@ Level *Level::getCurrentLevel()
 }
 
 Level::Level (ofApp *_app, int enemies, int pickups)
-:GameState(_app), numEnemies(enemies), numPickups(pickups)
+:GameState(_app), numEnemies(enemies), numPickups(pickups), state(not_started)
 {
     
 }
 Level::~Level()
 {
-    clear();
+    end();
 }
 
-void Level::clear(){
+void Level::end(){
     for(GameObject *go : gameObjects){
         delete go;
     }
@@ -48,7 +48,7 @@ void Level::start()
 {
     //setCurrentLevel(this);
     
-    clear();
+    state = playing;
     
     ofBackground(0, 0, 100);
     Player *player = new Player(20, ofGetHeight()/2);
@@ -98,6 +98,19 @@ void Level::draw()
                                  return !go->isAlive();
                              });
     gameObjects.erase(it, gameObjects.end());
+    
+    if(state == failed){
+        GameState::setGameState(GameState::getNumGameStates()-1);
+        state = not_started;
+    }
+    if(state == complete){
+        GameState::nextGameState();
+        if(getCurrentLevel() == nullptr){
+            GameState::setGameState(0);
+        }
+        state = not_started;
+    }
+
 }
 
 void Level::keyPressed(int key)
@@ -107,16 +120,16 @@ void Level::keyPressed(int key)
     }
 }
 
-void Level::gameOver()
-{
-    GameState::setGameState(GameState::getNumGameStates()-1);
-}
-
-void Level::win()
-{
-    GameState::nextGameState();
-    if(getCurrentLevel() == nullptr){
-        GameState::setGameState(0);
-    }
-}
+//void Level::gameOver()
+//{
+//    nextGameState = GameState::getNumGameStates()-1;
+//}
+//
+//void Level::win()
+//{
+//    nextGameState = GameState::getCurrentGameState();
+//    if(getCurrentLevel() == nullptr){
+//        GameState::setGameState(0);
+//    }
+//}
 

@@ -10,7 +10,7 @@
 #include "Weapon.hpp"
 #include "Player.hpp"
 
-WeaponPickup::WeaponPickup(float x, float y, Weapon *_weapon)
+WeaponPickup::WeaponPickup(float x, float y, const Weapon &_weapon)
 :Pickup(x,y), weapon(_weapon)
 {
     
@@ -18,20 +18,18 @@ WeaponPickup::WeaponPickup(float x, float y, Weapon *_weapon)
 
 WeaponPickup::~WeaponPickup()
 {
-    if(weapon) delete weapon;
 }
 
 void WeaponPickup::apply(Player *player)
 {
     if(player){
         player->addWeapon(weapon);
-        weapon = nullptr;
     }
 }
 
 void WeaponPickup::subclassDraw()
 {
-    ofSetColor(weapon->getColour());
+    ofSetColor(weapon.getColour());
     ofFill();
     ofDrawCircle(0, 0, getWidth());
 }

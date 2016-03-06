@@ -13,7 +13,7 @@
 // passes is to the super class (GameObject) constructor
 // It also creates an inventory and adds a weapon to it
 Player::Player(float x, float y)
-:Entity(x,y, 20, 20, 40, 5), currentWeapon(nullptr)
+:Entity(x,y, 20, 20, 40, 5), currentWeapon(-1)
 {
     //inventory = new ArrayList <Weapon>();
     //addWeapon(new Weapon(1, 2, 0.1));
@@ -21,19 +21,16 @@ Player::Player(float x, float y)
 
 Player::~Player()
 {
-    for (auto weapon : inventory){
-        delete weapon;
-    }
     inventory.clear();
 }
 
 // add a new weapon to the inventory
 // and set it as the current weapon
-void Player::addWeapon(Weapon *w)
+void Player::addWeapon(const Weapon &w)
 {
     inventory.push_back(w);
-    currentWeapon = w;
-     currentWeapon->setOwner(this);
+    currentWeapon = inventory.size()-1;
+    inventory[currentWeapon].setOwner(this);
 }
 
 // Select a new weapon from the inventory.
@@ -46,16 +43,16 @@ void Player::chooseWeapon(int i)
     if(i >= 0 && i < inventory.size())
     {
         // get weapon i and set it as the current weapon
-        currentWeapon = inventory[i];
+        currentWeapon = i;
     }
 }
 
 // fire the weapon
 void Player::fire()
 {
-    if(currentWeapon != nullptr)
+    if(currentWeapon >= 0 && currentWeapon < inventory.size())
     {
-        currentWeapon->fire();
+        inventory[currentWeapon].fire();
     }
 }
 
@@ -74,7 +71,7 @@ void Player::subclassDraw()
     // player
     ofColor col (255, 0, 0);
     if(currentWeapon){
-        col =currentWeapon->getColour();
+        col =inventory[currentWeapon].getColour();
     }
     ofSetColor(col);
     //ofSetColor(255, 0, 0);
@@ -96,6 +93,9 @@ void Player::keyPressed(int key)
     }
     if(key == OF_KEY_DOWN){
         down();
+    }
+    if (key >= '0' && key <= '9') {
+        chooseWeapon(key - '0');
     }
 }
 

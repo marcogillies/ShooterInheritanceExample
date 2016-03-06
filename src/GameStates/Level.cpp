@@ -52,7 +52,7 @@ void Level::start()
     
     ofBackground(0, 0, 100);
     Player *player = new Player(20, ofGetHeight()/2);
-    player->addWeapon(new Weapon(1, 2, 0.1));
+    player->addWeapon(Weapon(1, 2, 0.1));
     gameObjects.push_back(player);
     
     for (int i = 0; i < numEnemies; i++){
@@ -71,7 +71,7 @@ void Level::start()
                                             ofRandom(5, 20)); //health
             gameObjects.push_back(pickup);
         } else {
-            Weapon * weapon = new Weapon (ofRandom(1, 10), // damage
+            Weapon weapon (ofRandom(1, 10), // damage
                                           ofRandom(0, 3.0f), //speed
                                           ofRandom(0.0f, 1.0f)); // reload time
             WeaponPickup *pickup= new WeaponPickup(ofRandom(50, ofGetWidth()), // x

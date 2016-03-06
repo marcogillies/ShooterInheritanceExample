@@ -20,6 +20,25 @@ Weapon::Weapon(float d, float s, float t)
     colour = ofColor (ofRandom(0, 255), ofRandom(0, 255), ofRandom(0, 255));
 }
 
+
+Weapon::Weapon (const Weapon &other)
+: damage(other.damage),
+    speed(other.speed),
+    reloadTime(other.reloadTime),
+    colour(other.colour),
+    lastFireTime(0.0f)
+{
+    
+}
+Weapon &Weapon::operator = (const Weapon &other)
+{
+    damage = other.damage;
+    speed = other.speed;
+    reloadTime = other.reloadTime;
+    colour = other.colour;
+    lastFireTime = 0.0f;
+}
+
 // shoot a bullet
 void Weapon::fire()
 {

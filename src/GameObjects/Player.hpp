@@ -20,9 +20,9 @@ class Player : public  Entity
 {
 protected:
     // the inventory of weapons the player can use
-    std::vector <Weapon *> inventory;
+    std::vector <Weapon> inventory;
     // the current weapon the player is using
-    Weapon *currentWeapon;
+     int currentWeapon;
 public:
     // The constructor takes the position of the player and
     // passes is to the super class (GameObject) constructor
@@ -33,7 +33,7 @@ public:
     
     // add a new weapon to the inventory
     // and set it as the current weapon
-    void addWeapon(Weapon *w);
+    void addWeapon(const Weapon &w);
     // Select a new weapon from the inventory.
     // A weapon is selected by a number which is
     // it's index into the inventory

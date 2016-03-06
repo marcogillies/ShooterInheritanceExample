@@ -11,16 +11,15 @@
 
 #include <stdio.h>
 #include "Pickup.hpp"
-
-class Weapon;
+#include "Weapon.hpp"
 
 class WeaponPickup : public Pickup
 {
-    Weapon *weapon;
+    Weapon weapon;
     
 public:
     
-    WeaponPickup(float x, float y, Weapon *weapon);
+    WeaponPickup(float x, float y, const Weapon &weapon);
     
     ~WeaponPickup();
     

@@ -40,6 +40,9 @@ public:
     // the constructor take the damage, speed and reload time
     Weapon(float d, float s, float t);
     
+    Weapon (const Weapon &other);
+    Weapon &operator = (const Weapon &other);
+    
     // shoot a bullet
     void fire();
     

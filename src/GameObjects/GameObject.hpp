@@ -12,6 +12,9 @@
 #include <stdio.h>
 #include "ofMain.h"
 
+/*
+ *  Super class of all objects in the game
+ */
 class GameObject
 {
 private:
@@ -30,12 +33,18 @@ protected:
     bool dead = false;
     
     //ofVec2f pos;
+    
+    // the bounding box of the object
+    // used for finding the position
+    // and for collision
     ofRectangle boundingBox;
     
+    // do sub-class specific responses to collision
     virtual void collisionResponse(GameObject *other);
     
 public:
     // generic constructor that sets the position
+    // width, and height
     GameObject(float x, float y, float w, float h);
     
     virtual ~GameObject();
@@ -51,15 +60,20 @@ public:
     // subclass to provide specific drawing code
     virtual void subclassDraw()=0;
     
+    // should be overridden in all sub classes
+    // that need to respond to key pressed
     virtual void keyPressed(int key);
     
+    // get the position (from the bouding box)
     ofPoint getPosition(){
         return boundingBox.getCenter();
     }
     
+    // move the object right by x and up by y
     void move(float x, float y){
         boundingBox.setPosition(boundingBox.getX() + x, boundingBox.getY() + y);
     }
+    
     
     float getHeight(){
         return boundingBox.getHeight();
@@ -69,10 +83,13 @@ public:
         return boundingBox.getWidth();
     }
     
+    // check for and respond to a collision with another object
     void collide (GameObject *other);
     
+    // set the object to dead
     virtual void die();
     
+    // checks if the object is alive
     bool isAlive(){
         return !dead;
     }

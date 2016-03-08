@@ -13,7 +13,7 @@
 #include "GameObject.hpp"
 
 
-// A class representing a player
+// A class representing an entity with health and movement
 // It is a subclass of GameObject because it has a position
 class Entity : public  GameObject
 {
@@ -24,9 +24,9 @@ protected:
     float speed;
     
 public:
-    // The constructor takes the position of the player and
+    // The constructor takes the position of the entity and
     // passes is to the super class (GameObject) constructor
-    // It also creates an inventory and adds a weapon to it
+    // Also sets up health and speed
     Entity(float x, float y, float w, float h, float _health, float _speed);
     
     ~Entity();
@@ -38,8 +38,10 @@ public:
     virtual void subclassDraw();
     
     
+    // take damage from another game object
     void takeDamage(float d);
     
+    // increase health
     void addHealth(float h);
 };
 

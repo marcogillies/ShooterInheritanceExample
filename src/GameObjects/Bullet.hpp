@@ -18,9 +18,12 @@
 // damage and speed of movement
 class Bullet : public GameObject
 {
-    float damage;
-    float speed;
+    float damage;  // damage done
+    float speed;   // speed of movement
     
+    // respond to a collision with another object
+    // if the other object is an enemy it will do
+    // damage to it
     virtual void collisionResponse(GameObject *other);
     
     
@@ -31,6 +34,7 @@ public:
     // constructor while d and s are used to set the damage
     // and speed variables
     Bullet(float x, float y, float d, float s);
+    
     // This is the function that draws the bullet
     // it moves the bullet based on speed and
     // then draws a circles whose size depends on

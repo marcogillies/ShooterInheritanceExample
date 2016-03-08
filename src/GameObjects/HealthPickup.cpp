@@ -19,13 +19,15 @@ HealthPickup::~HealthPickup()
 {
     
 }
-    
+
+// adds health to the player
 void HealthPickup::apply(Player *player)
 {
     if(player)
         player->addHealth(health);
 }
 
+// draw the pickup
 void HealthPickup::subclassDraw()
 {
     ofSetColor(200, 255, 200);

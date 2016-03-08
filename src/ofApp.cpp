@@ -5,22 +5,19 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    // load the font that is shared across menus
     font = std::shared_ptr<ofTrueTypeFont>(new ofTrueTypeFont());
     font->load("verdana.ttf", 48);
-    GameState::addGameState(new StartMenu(this, font));
-    GameState::addGameState(new Level(this, 10, 5));
-    GameState::addGameState(new Level(this, 20, 10));
-    GameState::addGameState(new GameOver(this, font));
+    
+    // load levels
+    GameState::addGameState(new StartMenu(font));
+    GameState::addGameState(new Level(10, 5));
+    GameState::addGameState(new Level(20, 10));
+    GameState::addGameState(new GameOver(font));
+    
+    // this will be the start menu
     GameState::setGameState(0);
 }
-
-//void ofApp::setGameState(int i)
-//{
-//    if(i >= 0 && i < gameStates.size()){
-//        currentGameState = i;
-//        gameStates[currentGameState]->start();
-//    }
-//}
 
 //--------------------------------------------------------------
 void ofApp::update(){
@@ -29,11 +26,13 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    // the real stuff is done by the current game state
     GameState::getCurrentGameState()->draw();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+    // the real stuff is done by the current game state
     GameState::getCurrentGameState()->keyPressed(key);
 }
 

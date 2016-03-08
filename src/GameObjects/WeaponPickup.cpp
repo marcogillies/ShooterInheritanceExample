@@ -20,6 +20,7 @@ WeaponPickup::~WeaponPickup()
 {
 }
 
+// adds the weapon to the player
 void WeaponPickup::apply(Player *player)
 {
     if(player){
@@ -27,6 +28,7 @@ void WeaponPickup::apply(Player *player)
     }
 }
 
+// draws the pickup in the colour of the weapon
 void WeaponPickup::subclassDraw()
 {
     ofSetColor(weapon.getColour());

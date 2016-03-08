@@ -40,16 +40,20 @@ public:
     // the constructor take the damage, speed and reload time
     Weapon(float d, float s, float t);
     
+    // copy constructor
     Weapon (const Weapon &other);
+    //assignment operator
     Weapon &operator = (const Weapon &other);
     
     // shoot a bullet
     void fire();
     
+    // the colour determines the colour of the player
     ofColor getColour(){
         return colour;
     }
     
+    // the game object using this weapon
     void setOwner(GameObject *go){
         owner = go;
     }

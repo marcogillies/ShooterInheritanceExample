@@ -8,8 +8,8 @@
 
 #include "GameOver.hpp"
 
-GameOver::GameOver(ofApp *_app, std::shared_ptr<ofTrueTypeFont>_font)
-: Menu(_app, _font, "Game Over")
+GameOver::GameOver(std::shared_ptr<ofTrueTypeFont>_font)
+: Menu(_font, "Game Over")
 {
 }
 
@@ -18,6 +18,7 @@ GameOver::~GameOver()
     
 }
 
+// doesn't actually do anything
 void GameOver::keyPressed(int key)
 {
 

@@ -9,8 +9,8 @@
 #include "StartMenu.hpp"
 #include "ofApp.h"
 
-StartMenu::StartMenu(ofApp *_app, std::shared_ptr<ofTrueTypeFont>_font)
-: Menu(_app, _font, "Press Space to Start")
+StartMenu::StartMenu(std::shared_ptr<ofTrueTypeFont>_font)
+: Menu(_font, "Press Space to Start")
 {
 }
 
@@ -19,6 +19,7 @@ StartMenu::~StartMenu()
     
 }
 
+// go to level 1 when you press space
 void StartMenu::keyPressed(int key)
 {
     if(key == ' '){

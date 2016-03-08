@@ -22,10 +22,5 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    //void setGameState(int i);
-    
     std::shared_ptr<ofTrueTypeFont> font;
-    //std::vector<std::unique_ptr<GameState> > gameStates;
-    //int currentGameState;
-		
 };

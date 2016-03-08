@@ -12,12 +12,18 @@
 #include <stdio.h>
 #include "Menu.hpp"
 
+/*
+ *  Game Over Screen
+ *  a standard menu that has no interaction 
+ */
 class GameOver: public Menu
 {
 public:
-    GameOver(ofApp *_app, std::shared_ptr<ofTrueTypeFont>_font);
+    // parameter: the font to use to draw
+    GameOver(std::shared_ptr<ofTrueTypeFont>_font);
     virtual ~GameOver();
     
+    // doesn't actually do anything
     virtual void keyPressed(int key);
 };
 

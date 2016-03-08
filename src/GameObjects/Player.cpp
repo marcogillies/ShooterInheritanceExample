@@ -65,35 +65,44 @@ void Player::subclassDraw()
     // move fowrad
     move(1, 0);;
    
+    // draw the health bar from the entity class
     Entity::subclassDraw();
     
     
-    // player
+    // draw the player as a square with the
+    // same colour as the current weapon
     ofColor col (255, 0, 0);
     if(currentWeapon){
         col =inventory[currentWeapon].getColour();
     }
     ofSetColor(col);
-    //ofSetColor(255, 0, 0);
     ofFill();
     ofDrawRectangle(0, 0, getHeight(), getWidth());
     
+    // if we reach the end of the screen, go to the
+    // win state
     if(getPosition().x > ofGetWidth()){
         Level::getCurrentLevel()->win();
     }
 }
 
+// respond to keys
 void Player::keyPressed(int key)
 {
+    // space for fire
     if(key == ' '){
         fire();
     }
+    
+    // arrow keys to move
     if(key == OF_KEY_UP){
         up();
     }
     if(key == OF_KEY_DOWN){
         down();
     }
+    
+    // number keys to change weapon
     if (key >= '0' && key <= '9') {
         chooseWeapon(key - '0');
     }
@@ -110,6 +119,7 @@ void Player::down()
     move(0, speed);
 }
 
+// if hte player dies, go to the gameover state
 void Player::die(){
     Level * level = Level::getCurrentLevel();
     if(level){

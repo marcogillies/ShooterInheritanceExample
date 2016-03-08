@@ -9,12 +9,19 @@
 #include "GameState.hpp"
 
 
-
+/*
+ *  define the static variables
+ */
 std::vector<std::unique_ptr<GameState> > GameState::gameStates;
 
 int GameState::currentGameState = -1;
 
-GameState::GameState(ofApp *_app) : app(_app)
+/*
+ * base class constructor and destructor do nothing as the
+ * base class contains no data
+ */
+
+GameState::GameState()
 {
     
 }

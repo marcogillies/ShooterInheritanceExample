@@ -33,9 +33,14 @@ void Bullet::subclassDraw()
 }
 
 
+// respond to a collision with another object
+// if the other object is an enemy it will do
+// damage to it
 void Bullet::collisionResponse(GameObject *other)
 {
+    // attempt to cast the object to an enemy
     Enemy *enemy = dynamic_cast<Enemy *>(other);
+    // if it is an enemy do damage and then die
     if(enemy){
         enemy->takeDamage(damage);
         die();

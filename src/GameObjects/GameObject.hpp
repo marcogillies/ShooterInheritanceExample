@@ -42,6 +42,10 @@ protected:
     // do sub-class specific responses to collision
     virtual void collisionResponse(GameObject *other);
     
+    // this needs to be overriden in the
+    // subclass to provide specific drawing code
+    virtual void subclassDraw()=0;
+    
 public:
     // generic constructor that sets the position
     // width, and height
@@ -56,9 +60,7 @@ public:
     // specific drawing code for the subclass
     void draw();
     
-    // this needs to be overriden in the
-    // subclass to provide specific drawing code
-    virtual void subclassDraw()=0;
+    
     
     // should be overridden in all sub classes
     // that need to respond to key pressed
@@ -69,11 +71,6 @@ public:
         return boundingBox.getCenter();
     }
     
-    // move the object right by x and up by y
-    void move(float x, float y){
-        boundingBox.setPosition(boundingBox.getX() + x, boundingBox.getY() + y);
-    }
-    
     
     float getHeight(){
         return boundingBox.getHeight();
@@ -81,6 +78,11 @@ public:
     
     float getWidth(){
         return boundingBox.getWidth();
+    }
+
+    // move the object right by x and up by y
+    void move(float x, float y){
+        boundingBox.setPosition(boundingBox.getX() + x, boundingBox.getY() + y);
     }
     
     // check for and respond to a collision with another object

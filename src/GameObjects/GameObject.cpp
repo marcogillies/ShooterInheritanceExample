@@ -1,4 +1,4 @@
-//
+ //
 //  GameObject.cpp
 //  ShooterInhertiance
 //
@@ -28,7 +28,9 @@ void GameObject::draw()
     ofPushStyle();
     ofPushMatrix();
     ofTranslate(boundingBox.getLeft(), boundingBox.getTop());
+    
     subclassDraw();
+    
     ofPopMatrix();
     ofPopStyle();
 };

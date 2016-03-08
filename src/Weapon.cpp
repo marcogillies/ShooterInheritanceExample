@@ -13,7 +13,7 @@
 
 // the constructor take the damage, speed and reload time
 Weapon::Weapon(float d, float s, float t)
-:damage(d), speed(s), reloadTime(t), lastFireTime(0.0f)
+:damage(d), speed(s), reloadTime(t), lastFireTime(0.0f), owner(nullptr)
 {
     
     // give it a random colour
@@ -27,7 +27,8 @@ Weapon::Weapon (const Weapon &other)
     speed(other.speed),
     reloadTime(other.reloadTime),
     colour(other.colour),
-    lastFireTime(0.0f)
+    lastFireTime(0.0f),
+    owner(nullptr)
 {
     
 }
@@ -41,6 +42,9 @@ Weapon &Weapon::operator = (const Weapon &other)
     reloadTime = other.reloadTime;
     colour = other.colour;
     lastFireTime = 0.0f;
+    owner = nullptr;
+    
+    return *this;
 }
 
 // shoot a bullet

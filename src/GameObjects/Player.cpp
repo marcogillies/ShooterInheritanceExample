@@ -15,13 +15,12 @@
 Player::Player(float x, float y)
 :Entity(x,y, 20, 20, 40, 5), currentWeapon(-1)
 {
-    //inventory = new ArrayList <Weapon>();
-    //addWeapon(new Weapon(1, 2, 0.1));
+    
 }
 
 Player::~Player()
 {
-    inventory.clear();
+    
 }
 
 // add a new weapon to the inventory
@@ -44,6 +43,7 @@ void Player::chooseWeapon(int i)
     {
         // get weapon i and set it as the current weapon
         currentWeapon = i;
+        inventory[currentWeapon].setOwner(this);
     }
 }
 
@@ -121,6 +121,8 @@ void Player::down()
 
 // if hte player dies, go to the gameover state
 void Player::die(){
+    GameObject::die();
+    
     Level * level = Level::getCurrentLevel();
     if(level){
         level->gameOver();

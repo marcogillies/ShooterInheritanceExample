@@ -108,11 +108,16 @@ void Level::draw()
     // remove all dead objects
     // only do this after the two loops to avoid
     // invalidated iterators
-    auto it = std::remove_if(gameObjects.begin(), gameObjects.end(),
+    auto toremove = std::remove_if(gameObjects.begin(), gameObjects.end(),
                              [](GameObject *go){
-                                 return !go->isAlive();
+                                 bool dead = !go->isAlive();
+                                 // delete any dead game objects
+                                 if(dead){
+                                     delete go;
+                                 }
+                                 return dead;
                              });
-    gameObjects.erase(it, gameObjects.end());
+    gameObjects.erase(toremove, gameObjects.end());
     
     // if we are in the faild state go to gamover
     // only do this after the main loops to avoid

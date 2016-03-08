@@ -26,11 +26,13 @@ class Weapon
     // how much time you have to wait before shooting again
     float reloadTime;
     
+    // the colour of the weapon
+    ofColor colour;
+    
     // this is a variable for storing the
     // last time the weapon fired, used for implementing a delay
     float lastFireTime;
-    // the colour of the weapon
-    ofColor colour;
+    
     
     // the player that owns the weapon
     GameObject *owner;

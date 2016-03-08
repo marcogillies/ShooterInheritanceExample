@@ -13,7 +13,6 @@
 #include <vector>
 #include <memory>
 
-class ofApp;
 
 /*
  * This is the superclass of all game states including
@@ -34,7 +33,7 @@ private:
 protected:
     // a singleton list of game states
     // this is the definitive store of game states
-    static std::vector<std::unique_ptr<GameState> > gameStates;
+    static std::vector< std::unique_ptr<GameState> > gameStates;
     // the current game state
     static int currentGameState;
 public:

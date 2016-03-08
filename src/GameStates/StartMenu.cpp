@@ -7,7 +7,6 @@
 //
 
 #include "StartMenu.hpp"
-#include "ofApp.h"
 
 StartMenu::StartMenu(std::shared_ptr<ofTrueTypeFont>_font)
 : Menu(_font, "Press Space to Start")

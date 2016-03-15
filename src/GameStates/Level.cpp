@@ -124,8 +124,8 @@ void Level::draw()
     // only do this after the main loops to avoid
     // acting on deleted objects
     if(state == failed){
-        GameState::setGameState(GameState::getNumGameStates());
-        //GameOver::goToGameOver();
+        //GameState::setGameState(GameState::getNumGameStates());
+        GameOver::goToGameOver();
         state = not_started;
     }
     // if we have completed the level go to the

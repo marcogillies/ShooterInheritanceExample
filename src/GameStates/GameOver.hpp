@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "Menu.hpp"
+#include "GameStateException.hpp"
 
 /*
  *  Game Over Screen
@@ -19,6 +20,15 @@
 class GameOver: public Menu
 {
 public:
+    static GameOver *goToGameOver(){
+        GameState::setGameState(GameState::getNumGameStates()-1);
+        GameOver *gameOver = dynamic_cast<GameOver *>(GameState::getCurrentGameState());
+        if (!gameOver){
+            throw GameStateException("could not find GameOver state");
+        }
+        return gameOver;
+    };
+    
     // parameter: the font to use to draw
     GameOver(std::shared_ptr<ofTrueTypeFont>_font);
     virtual ~GameOver();

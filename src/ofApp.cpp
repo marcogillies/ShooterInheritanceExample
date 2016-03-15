@@ -2,6 +2,7 @@
 #include "StartMenu.hpp"
 #include "Level.hpp"
 #include "GameOver.hpp"
+#include "GameStateException.hpp"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -14,6 +15,7 @@ void ofApp::setup(){
     GameState::addGameState(new Level(10, 5));
     GameState::addGameState(new Level(20, 10));
     GameState::addGameState(new GameOver(font));
+    //GameState::addGameState(new Level(20, 10));
     
     // this will be the start menu
     GameState::setGameState(0);
@@ -26,8 +28,16 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    // the real stuff is done by the current game state
-    GameState::getCurrentGameState()->draw();
+    try{
+        // the real stuff is done by the current game state
+        GameState::getCurrentGameState()->draw();
+    } catch (const GameStateException &e){
+        ofSystemAlertDialog(e.getMessage());
+        std::exit(1);
+    } catch (...){
+        ofSystemAlertDialog("unknown error");
+        std::exit(1);
+    }
 }
 
 //--------------------------------------------------------------

@@ -12,6 +12,9 @@
 #include <stdio.h>
 #include <vector>
 #include <memory>
+#include <sstream>
+
+#include "GameStateException.hpp"
 
 
 /*
@@ -70,6 +73,10 @@ public:
             
             currentGameState = i;
             gameStates[currentGameState]->start();
+        } else {
+            std::ostringstream s;
+            s <<"unknown game state " << i;
+            throw GameStateException(s.str());
         }
     }
     

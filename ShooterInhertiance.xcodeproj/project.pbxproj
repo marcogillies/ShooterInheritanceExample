@@ -21,6 +21,7 @@
 		A91283BC1C8AF30A00F75197 /* PickUp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283BA1C8AF30A00F75197 /* PickUp.cpp */; };
 		A91283BF1C8AF41400F75197 /* HealthPickup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283BD1C8AF41400F75197 /* HealthPickup.cpp */; };
 		A91283C21C8AF5FC00F75197 /* WeaponPickup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A91283C01C8AF5FC00F75197 /* WeaponPickup.cpp */; };
+		A9B4FE771C97F93600394B07 /* GameStateException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9B4FE751C97F93600394B07 /* GameStateException.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
@@ -84,6 +85,8 @@
 		A91283BE1C8AF41400F75197 /* HealthPickup.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HealthPickup.hpp; sourceTree = "<group>"; };
 		A91283C01C8AF5FC00F75197 /* WeaponPickup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WeaponPickup.cpp; sourceTree = "<group>"; };
 		A91283C11C8AF5FC00F75197 /* WeaponPickup.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WeaponPickup.hpp; sourceTree = "<group>"; };
+		A9B4FE751C97F93600394B07 /* GameStateException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameStateException.cpp; path = GameStates/GameStateException.cpp; sourceTree = "<group>"; };
+		A9B4FE761C97F93600394B07 /* GameStateException.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameStateException.hpp; path = GameStates/GameStateException.hpp; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* ShooterInhertianceDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShooterInhertianceDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
@@ -126,6 +129,8 @@
 				A912838F1C89773700F75197 /* Level.hpp */,
 				A91283911C89789000F75197 /* GameOver.cpp */,
 				A91283921C89789000F75197 /* GameOver.hpp */,
+				A9B4FE751C97F93600394B07 /* GameStateException.cpp */,
+				A9B4FE761C97F93600394B07 /* GameStateException.hpp */,
 			);
 			name = GameStates;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				A91283931C89789000F75197 /* GameOver.cpp in Sources */,
 				A91283BC1C8AF30A00F75197 /* PickUp.cpp in Sources */,
 				A91283C21C8AF5FC00F75197 /* WeaponPickup.cpp in Sources */,
+				A9B4FE771C97F93600394B07 /* GameStateException.cpp in Sources */,
 				A912838D1C8974FA00F75197 /* StartMenu.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				A91283871C896E3F00F75197 /* GameState.cpp in Sources */,

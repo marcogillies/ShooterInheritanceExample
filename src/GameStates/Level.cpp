@@ -125,6 +125,9 @@ void Level::draw()
     // acting on deleted objects
     if(state == failed){
         //GameState::setGameState(GameState::getNumGameStates());
+
+        //GameState::setGameState(GameState::getNumGameStates()-1);
+
         GameOver::goToGameOver();
         state = not_started;
     }

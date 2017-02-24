@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClCompile Include="src\ofApp.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameObjects\Bullet.cpp">
+			<Filter>src\GameObjects</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameObjects\Enemy.cpp">
+			<Filter>src\GameObjects</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameObjects\Entity.cpp">
+			<Filter>src\GameObjects</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameObjects\GameObject.cpp">
+			<Filter>src\GameObjects</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameObjects\HealthPickup.cpp">
+			<Filter>src\GameObjects</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameObjects\PickUp.cpp">
+			<Filter>src\GameObjects</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameObjects\Player.cpp">
+			<Filter>src\GameObjects</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameObjects\WeaponPickup.cpp">
+			<Filter>src\GameObjects</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameStates\GameOver.cpp">
+			<Filter>src\GameStates</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameStates\GameState.cpp">
+			<Filter>src\GameStates</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameStates\GameStateException.cpp">
+			<Filter>src\GameStates</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameStates\Level.cpp">
+			<Filter>src\GameStates</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameStates\Menu.cpp">
+			<Filter>src\GameStates</Filter>
+		</ClCompile>
+		<ClCompile Include="src\GameStates\StartMenu.cpp">
+			<Filter>src\GameStates</Filter>
+		</ClCompile>
+		<ClCompile Include="src\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\ofApp.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\Weapon.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="src">
+			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="src\GameObjects">
+			<UniqueIdentifier>{67E94580-9BB7-DF9F-8066-56B8}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="src\GameStates">
+			<UniqueIdentifier>{3408C028-26C1-64E2-C901-6C47}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameObjects\Bullet.hpp">
+			<Filter>src\GameObjects</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameObjects\Enemy.hpp">
+			<Filter>src\GameObjects</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameObjects\Entity.hpp">
+			<Filter>src\GameObjects</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameObjects\GameObject.hpp">
+			<Filter>src\GameObjects</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameObjects\HealthPickup.hpp">
+			<Filter>src\GameObjects</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameObjects\PickUp.hpp">
+			<Filter>src\GameObjects</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameObjects\Player.hpp">
+			<Filter>src\GameObjects</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameObjects\WeaponPickup.hpp">
+			<Filter>src\GameObjects</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameStates\GameOver.hpp">
+			<Filter>src\GameStates</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameStates\GameState.hpp">
+			<Filter>src\GameStates</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameStates\GameStateException.hpp">
+			<Filter>src\GameStates</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameStates\Level.hpp">
+			<Filter>src\GameStates</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameStates\Menu.hpp">
+			<Filter>src\GameStates</Filter>
+		</ClInclude>
+		<ClInclude Include="src\GameStates\StartMenu.hpp">
+			<Filter>src\GameStates</Filter>
+		</ClInclude>
+		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\Weapon.hpp">
+			<Filter>src</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc" />
+	</ItemGroup>
+</Project>
